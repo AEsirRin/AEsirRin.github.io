@@ -39,9 +39,9 @@ function playStream(idVideoTab, stream) {
 
 const peer = new Peer({
   key: "peerjs",
-  // host: "peerjs-call-5bd13f0aecba.herokuapp.com",
-  // secure: false,
-  // port: 443,
+  host: "peerjs-call-107766433db5.herokuapp.com",
+  secure: true,
+  port: 443,
 });
 
 peer.on("open", function (id) {
