@@ -10,11 +10,11 @@ socket.on("DANH_SACH_ONLINE", (arrUserInfo) => {
   $("#div-signup").hide();
   arrUserInfo.forEach((user) => {
     const { name, peerId } = user;
-    $("#ulUser").append(`<li id= "${peerId}">${name}</li>`);
+    $("#ulUser").append(`<li id= "${peerId}" class="btn btn-outline-primary">${name}</li>`);
   });
   socket.on("CO_NGUOI_DUNG_MOI", (user) => {
     const { name, peerId } = user;
-    $("#ulUser").append(`<li id= "${peerId}">${name}</li>`);
+    $("#ulUser").append(`<li id= "${peerId}" class="btn btn-outline-primary">${name}</li>`);
   });
 
   socket.on("AI_DO_NGAT_KET_NOI", (peerId) => {

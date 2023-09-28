@@ -1,0 +1,30 @@
+body {
+    background-color: bisque;
+}
+
+#wrapCall {
+    display: flex;
+    height: 550;
+    justify-content: space-around;
+    border: 2px;
+}
+
+#localCall {
+    
+}
+
+#localStream {
+    border-radius: 30px;
+}
+
+#remoteCall {
+
+}
+
+#remoteStream {
+    border-radius: 30px;
+}
+
+#div_signup {
+    display: ;
+}
