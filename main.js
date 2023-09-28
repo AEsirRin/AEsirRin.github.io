@@ -25,7 +25,7 @@ socket.on("DANH_SACH_ONLINE", (arrUserInfo) => {
 socket.on("DANG_KY_THAT_BAI", () => alert("Name already exists"));
 
 function openStream() {
-  const config = { audio: false, video: true };
+  const config = { audio: true, video: true };
   return navigator.mediaDevices.getUserMedia(config);
 }
 
@@ -39,7 +39,7 @@ function playStream(idVideoTab, stream) {
 
 const peer = new Peer({
   key: "peerjs",
-  host: "peerjs-call-107766433db5.herokuapp.com",
+  // host: "peerjs-call-107766433db5.herokuapp.com",
   secure: true,
   port: 443,
 });
@@ -82,4 +82,15 @@ $("#ulUser").on("click", "li", function () {
       playStream("remoteStream", remoteStream)
     );
   });
+});
+
+$("#btnMute").click(() => {
+  const stream = $("#localStream")[0].srcObject;
+  const audioTracks = stream.getAudioTracks();
+
+  if (audioTracks.length > 0) {
+    // Nếu mic đã bật, tắt mic
+    audioTracks[0].enabled = !audioTracks[0].enabled;
+    $("#btnMute").text(audioTracks[0].enabled ? "Mute" : "Unmute");
+  }
 });
